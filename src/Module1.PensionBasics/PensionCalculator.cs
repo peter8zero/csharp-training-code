@@ -13,7 +13,8 @@ public class PensionCalculator
     {
         // TODO: Implement the pension calculation formula
         // Hint: Simply multiply the three values together
-        throw new NotImplementedException("Exercise 1: Implement CalculateAnnualPension");
+        //some comment
+        //throw new NotImplementedException("Exercise 1: Implement CalculateAnnualPension");
     }
 
     // Exercise 2: Get the accrual rate from the enum
