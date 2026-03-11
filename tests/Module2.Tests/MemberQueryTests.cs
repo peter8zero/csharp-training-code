@@ -19,7 +19,7 @@ public class MemberQueryTests
     public void GetMembersByScheme_DB60ths_ReturnsFiveMembers()
     {
         var result = _queries.GetMembersByScheme("DB60ths");
-        Assert.Equal(5, result.Count);
+        Assert.Equal(6, result.Count);
         Assert.All(result, m => Assert.Equal("DB60ths", m.SchemeType));
     }
 

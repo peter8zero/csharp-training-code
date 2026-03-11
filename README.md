@@ -130,6 +130,55 @@ csharp-tutor/
 - `dotnet build` compiles everything (with warnings for TODOs, but no errors)
 - `dotnet test` runs all tests — they start red and turn green as you implement
 
+## Debugging: Stepping Through Code Line by Line
+
+One of the most powerful ways to understand what your code is doing is to run it in **debug mode** — this lets you pause execution at any line and watch exactly what's happening.
+
+### Setting a Breakpoint
+
+A **breakpoint** is a marker that tells the debugger "pause here". To set one in VS Code:
+
+1. Open any `.cs` file (e.g. `src/Module1.PensionBasics/PensionCalculator.cs`)
+2. Click in the **gutter** — the narrow column to the left of the line numbers
+3. A red dot appears — that's your breakpoint
+
+### Starting the Debugger
+
+1. Open the file that contains your `Main` method or the code you want to trace (`Program.cs` is a good starting point)
+2. Press **F5** (or go to **Run → Start Debugging**)
+3. VS Code will build the project and run it — execution will pause at your breakpoint
+
+> If VS Code asks which project to debug, select the module you're working on (e.g. `Module1.PensionBasics`).
+
+### Stepping Through Code
+
+Once paused at a breakpoint, use these keys to move through the code:
+
+| Key | Action | When to use |
+|-----|--------|-------------|
+| **F10** | Step Over | Run the current line and move to the next one |
+| **F11** | Step Into | If the line calls a method, jump inside that method |
+| **Shift+F11** | Step Out | Finish the current method and return to where it was called |
+| **F5** | Continue | Run freely until the next breakpoint (or program end) |
+
+### Watching Variables
+
+While paused, VS Code shows you the current value of every variable:
+
+- **Variables panel** (bottom-left): lists all variables in scope and their current values
+- **Hover over a variable** in the editor: a tooltip shows its value
+- **Watch panel**: click **+** to add any expression (e.g. `pension * 12`) and watch it update as you step
+
+### Example Workflow
+
+1. Open `src/Module1.PensionBasics/PensionCalculator.cs`
+2. Set a breakpoint on the first line inside `CalculateAnnualPension`
+3. Press **F5** to start
+4. Use **F10** to step over each line — watch the `Variables` panel to see `salary`, `accrualRate`, and the return value change in real time
+5. Press **F5** to finish running when you've seen enough
+
+This is the single best way to debug unexpected results — if a calculation is returning the wrong number, step through it line by line and you'll see exactly where it goes wrong.
+
 ## Tips
 
 - Work through the modules in order — later modules build on earlier concepts
